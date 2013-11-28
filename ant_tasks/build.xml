@@ -1,0 +1,78 @@
+<project name="gyron" default="slow_build" basedir="." xmlns:sonar="antlib:org.sonar.ant">
+    <property file="build.properties" />
+
+    <path id="svnant.classpath">
+         <fileset dir="${lib.dir}">
+             <include name="**/*.jar"/>
+         </fileset>
+    </path>
+
+    <!-- load the svn task -->
+    <typedef resource="org/tigris/subversion/svnant/svnantlib.xml" classpathref="svnant.classpath" />
+
+    <target name="clean">
+         <delete dir="src_latest"/>
+    </target>
+
+
+    <svnSetting
+        id="svn.settings"
+        svnkit="false"
+        javahl="false"
+        username="${svnant.repository.user}"
+        password="${svnant.repository.passwd}" />
+
+    <target name="checkout">
+        <svn refid="svn.settings">
+            <checkout url="${repository.url}" revision="HEAD" destPath="src_latest" />
+        </svn>
+    </target>
+
+    <target name="update">
+      <svn refid="svn.settings">
+        <update dir="src_latest" />
+      </svn>
+    </target>
+
+    <target name="composer">
+        <exec dir="${basedir}/" executable="./composer">
+            <arg line="update --working-dir=${workingdir}/src" />
+        </exec>
+    </target>
+
+    <target name="unit">
+        <exec dir="${basedir}/${workingdir}/" executable="phpunit" failonerror="true">
+            <arg line="-c src/ --log-junit ${basedir}/_log/phpunit.xml" />
+        </exec>
+    </target>
+
+    <target name="acceptance">
+        <exec dir="${basedir}/${workingdir}/" executable="src/vendor/bin/codecept" failonerror="true">
+            <arg line="--config=src/codeception.yml --xml run" />
+        </exec>
+   </target>
+
+
+    <target name="phpcpd" description="Find duplicate code using PHPCPD">
+        <exec dir="${basedir}/${workingdir}/" executable="src/vendor/bin/phpcpd">
+            <arg value="--log-pmd" />
+            <arg value="${basedir}/_log/phpcpd.xml" />
+            <arg path="${basedir}/${workingdir}/application" />
+        </exec>
+    </target>
+
+    <target name="test" depends="unit, acceptance"/>
+    <target name="quick_build" depends="update, composer, test"/>
+    <target name="slow_build" depends="clean, checkout, composer, test, phpcpd"/>
+
+    <!-- Define the Sonar task -->
+    <target name="sonar">
+        <property file="sonar.properties" />
+        <taskdef uri="antlib:org.sonar.ant" resource="org/sonar/ant/antlib.xml">
+            <classpath path="/usr/share/ant/lib" />
+        </taskdef>
+        <sonar:sonar />
+    </target>
+
+</project>
+
