@@ -107,5 +107,13 @@ mysql:
             host: localhost
             user: gyron
             password: gyron
-            sql_file: /var/www/dump.sql
+            sql_file: /var/www/gyron/portal/tests/db-skeleton.sql
+        LsBUQUu7WDsI:
+            grant:
+                - ALL
+            name: gyron_portal_test
+            host: localhost
+            user: gyron_test
+            password: gyron_test
+            sql_file: /var/www/gyron/portal/tests/db-skeleton.sql
 
