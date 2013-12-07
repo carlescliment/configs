@@ -31,7 +31,7 @@ WARNING: The vboxdrv kernel module is not loaded. Either there is no module
          You will not be able to start VMs until this problem is fixed.
 ```
 
-** SOLUTION:**
+**SOLUTION:**
 
 ```
 sudo apt-get install linux-headers-3.11.0-13-generic
@@ -58,7 +58,7 @@ VirtualBox GUI is open.
 ```
 
 
-** SOLUTION:**
+**SOLUTION:**
 
 Enable VT-X virtualization in BIOS
 
@@ -71,7 +71,7 @@ $ sudo dpkg-reconfigure virtualbox
 #### PROBLEM 3
 VirtualBox complains about not having _Guest additions_.
 
-** SOLUTION:**
+**SOLUTION:**
 
 ```
 $ vagrant plugin install vagrant-vbguest
@@ -83,7 +83,7 @@ $ vagrant plugin install vagrant-vbguest
 
 Provisions are not installed.
 
-** SOLUTION:**
+**SOLUTION:**
 
 ```
 $ vagrant provision
@@ -94,7 +94,7 @@ $ vagrant provision
 
 VirtualBox does not start the machine after a distribution update.
 
-** SOLUTION:**
+**SOLUTION:**
 
 ```
 $ sudo apt-get install linux-headers-generic
@@ -106,7 +106,7 @@ $ sudo dpkg-reconfigure virtualbox
 
 Having installed the vagrant-vbguest plugin, it provisions everything ok in a machine, but it does not in another based in CentOS (Puphpet).
 
-** SOLUTION:**
+**SOLUTION:**
 
 Add `config.vbguest.auto_update = false` to the Vagrant file.
 
