@@ -3,8 +3,8 @@
 
 ## Requirements for this manual
 
-- ** Ubuntu **
-- ** Subversion **
+- **Ubuntu**
+- **Subversion**
 
 ### Install dependencies
 
