@@ -1,8 +1,12 @@
 # PHP Under Control
 
-Initial setup **for a project managed by subversion**.
 
-## Install dependencies
+## Requirements for this manual
+
+- ** Ubuntu **
+- ** Subversion **
+
+### Install dependencies
 
 ```
 $ apt-get install subversion
@@ -12,7 +16,7 @@ $ apt-get install ant
 sendmail, postfix or other mail platforms
 ```
 
-## Download CruiseControl
+### Download CruiseControl
 
 Download the latest version from the [official webpage](http://cruisecontrol.sourceforge.net/download.html) and extract it wherever you want.
 
@@ -20,7 +24,9 @@ Suggested: `/var/ci/cruise-control`
 
 
 
-## Create a project folder
+## Configure the project
+
+### Create a project folder
 
 For example `/var/ci/cruise-control/projects/your-project`
 [Download svn ant](http://subclipse.tigris.org/files/documents/906/49042/svnant-1.3.1.zip).
@@ -28,7 +34,7 @@ Extract the svnant lib folder inside the project directory, so that you have som
 
 
 
-## Create a `build-properties` file in your project folder
+### Create a `build-properties` file in your project folder
 
 ```
 # -----------------------------------------------------------------------------
@@ -47,7 +53,7 @@ svnant.repository.user=your_svn_user
 svnant.repository.passwd=your_svn_password
 ```
 
-## Put a build.xml file in your project folder
+### Put a build.xml file in your project folder
 
 Have a look at [this example](/ant_tasks/build.xml). It defines a set of tasks, each one identified by a <target> tag, that can be executed in isolation:
 
@@ -62,6 +68,8 @@ Moreover, there are two complex tasks than combine the previous:
 
 * `ant quick_build` -> updates an existing copy, executes composer and runs all tests
 * `ant slow_build` -> brings a new copy from the repository, executes composer and runs all tests
+
+
 
 
 
@@ -96,7 +104,7 @@ Look at the CruiseControl root dir. You should see a build.xml file inside. Writ
 The previous xml executes the slow_build task every 5 minutes.
 
 
-## Patch CruiseControl with PHPUnderControl
+### Patch CruiseControl with PHPUnderControl
 
 ```
 git clone git://github.com/phpundercontrol/phpUnderControl.git
@@ -104,7 +112,7 @@ phpUnderControl/bin/phpuc(.php|.bat) install /path/to/cruisecontrol
 ```
 
 
-## Go to the dashboard and enjoy
+### Go to the dashboard and enjoy
 
 http://localhost:8080/dashboard/tab/dashboard
 
