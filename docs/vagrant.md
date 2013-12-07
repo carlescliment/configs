@@ -29,6 +29,7 @@ WARNING: The vboxdrv kernel module is not loaded. Either there is no module
            sudo /etc/init.d/vboxdrv setup
 
          You will not be able to start VMs until this problem is fixed.
+```
 
 ** SOLUTION:**
 
