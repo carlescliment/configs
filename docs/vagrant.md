@@ -1,6 +1,6 @@
 # Vagrant
 
-Installation instructions for **Ubuntu**. This document has been written by @pedronofuentes and me.
+Installation instructions for **Ubuntu**. This document has also been written by [@pedronofuentes](https://github.com/pedronofuentes).
 
 ## Installation
 
