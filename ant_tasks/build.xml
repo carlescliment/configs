@@ -1,4 +1,4 @@
-<project name="gyron" default="slow_build" basedir="." xmlns:sonar="antlib:org.sonar.ant">
+<project name="your-project" default="slow_build" basedir="." xmlns:sonar="antlib:org.sonar.ant">
     <property file="build.properties" />
 
     <path id="svnant.classpath">
