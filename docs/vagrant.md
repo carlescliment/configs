@@ -110,3 +110,15 @@ Having installed the vagrant-vbguest plugin, it provisions everything ok in a ma
 
 Add `config.vbguest.auto_update = false` to the Vagrant file.
 
+
+#### PROBLEM 7
+
+Guest-specific operations were attempted on a machine that is not
+ready for guest communication. This should not happen and a bug
+should be reported.
+
+**SOLUTION:**
+
+```
+$ vagrant plugin install --plugin-source https://rubygems.org --plugin-prerelease vagrant-vbguest
+```
