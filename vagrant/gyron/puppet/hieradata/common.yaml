@@ -80,6 +80,7 @@ php:
             - mcrypt
             - curl
             - json
+            - xsl
         pear: {  }
         pecl:
             - pecl_http
