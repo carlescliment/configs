@@ -71,7 +71,7 @@ apache:
     default_vhost: true
     mpm_module: prefork
 php:
-    version: '53'
+    version: '54'
     composer: '1'
     modules:
         php:
