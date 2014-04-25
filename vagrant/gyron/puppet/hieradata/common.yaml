@@ -60,7 +60,7 @@ apache:
     vhosts:
         7a9YXorNbfFc:
             servername: portal.gyron.dev
-            docroot: /var/www/gyron/portal
+            docroot: /var/www/gyron/portal/trunk
             port: '80'
             setenv:
                 - 'APP_ENV dev'
