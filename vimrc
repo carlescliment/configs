@@ -79,7 +79,7 @@ imap <Right> <NOP>
 imap <Up> <NOP>
 imap <Down> <NOP>
 
-nnoremap <C-h> :tabprevious<CR>
-nnoremap <C-l> :tabnext<CR>
-nnoremap <silent> <A-h> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
-nnoremap <silent> <A-l> :execute 'silent! tabmove ' . tabpagenr()<CR>
+map <C-h> :tabprevious<CR>
+map <C-l> :tabnext<CR>
+nnoremap <silent> <A-Left> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
+nnoremap <silent> <A-Right> :execute 'silent! tabmove ' . tabpagenr()<CR>
