@@ -58,6 +58,7 @@ filetype plugin indent on    " required
 " FuzzyFinder
 Bundle 'L9'
 Bundle 'FuzzyFinder'
+Bundle 'EasyGrep'
 map <C-s-p> :FufCoverageFile<CR>
 
 " NerdTree
@@ -72,14 +73,13 @@ map <Right> :echo "no!"<cr>
 map <Up>    :echo "no!"<cr>
 map <Down>  :echo "no!"<cr>
 "
-" disable cursor keys in insert mode
+" " disable cursor keys in insert mode
 imap <Left> <NOP>
 imap <Right> <NOP>
 imap <Up> <NOP>
 imap <Down> <NOP>
 
-" use arrows to manage vim tabs
-nnoremap <C-Left> :tabprevious<CR>
-nnoremap <C-Right> :tabnext<CR>
-nnoremap <silent> <A-Left> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
-nnoremap <silent> <A-Right> :execute 'silent! tabmove ' . tabpagenr()<CR>
+nnoremap <C-h> :tabprevious<CR>
+nnoremap <C-l> :tabnext<CR>
+nnoremap <silent> <A-h> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
+nnoremap <silent> <A-l> :execute 'silent! tabmove ' . tabpagenr()<CR>
