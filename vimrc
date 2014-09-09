@@ -70,7 +70,6 @@ Bundle 'scrooloose/nerdtree'
 
 map <C-s-p> :FufCoverageFile<CR>
 map <C-n> :NERDTreeToggle<CR>
-map <C-s-p> :FufCoverageFile<CR>
 
 " disable cursor keys in normal mode
 map <Left>  :echo "no!"<cr>
