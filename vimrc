@@ -2,6 +2,9 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 
+" load a buffer when the file changes
+set autoread
+
 autocmd FileType php
   \ setlocal shiftwidth=4 |
   \ setlocal tabstop=4
@@ -15,6 +18,8 @@ filetype off                  " required
 set rtp+=~/.vim/bundle/Vundle.vim
 
 au BufNewFile,BufRead *.test,*.install set filetype=php
+au BufNewFile,BufRead *.twig set filetype=html
+au BufNewFile,BufRead *.hbs set filetype=html
 
 
 call vundle#begin()
@@ -55,14 +60,15 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 "
 "
-" FuzzyFinder
 Bundle 'L9'
 Bundle 'FuzzyFinder'
 Bundle 'EasyGrep'
-map <C-s-p> :FufCoverageFile<CR>
-
-" NerdTree
+Bundle "CSApprox"
+" tabs for autocompleting
+Bundle "supertab" 
 Bundle 'scrooloose/nerdtree'
+
+map <C-s-p> :FufCoverageFile<CR>
 map <C-n> :NERDTreeToggle<CR>
 map <C-s-p> :FufCoverageFile<CR>
 
@@ -82,3 +88,6 @@ map <C-h> :tabprevious<CR>
 map <C-l> :tabnext<CR>
 nnoremap <silent> <A-Left> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
 nnoremap <silent> <A-Right> :execute 'silent! tabmove ' . tabpagenr()<CR>
+
+set t_Co=256
+colorscheme desert 
