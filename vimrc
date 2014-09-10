@@ -65,6 +65,8 @@ Bundle 'FuzzyFinder'
 Bundle 'EasyGrep'
 Bundle "CSApprox"
 Bundle 'scrooloose/nerdtree'
+" tabs for autocompleting
+Bundle "supertab"
 
 map <C-s-p> :FufCoverageFile<CR>
 map <C-n> :NERDTreeToggle<CR>
@@ -86,8 +88,8 @@ map <C-l> :tabnext<CR>
 nnoremap <silent> <A-Left> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
 nnoremap <silent> <A-Right> :execute 'silent! tabmove ' . tabpagenr()<CR>
 
-" tab autocompletes in insert mode
-imap <Tab> <C-n>
-
 set t_Co=256
 colorscheme desert 
+
+let @t = "O/** @test/jo"
+let @f = "Opublic function (){}?(i"
