@@ -91,5 +91,6 @@ nnoremap <silent> <A-Right> :execute 'silent! tabmove ' . tabpagenr()<CR>
 set t_Co=256
 colorscheme desert 
 
-let @t = "O/** @test/jo"
+let @t = "O/**@test/vkk=jjj@f"
 let @f = "Opublic function (){}?(i"
+let @c = "Oclass {}? a"
