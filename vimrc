@@ -91,6 +91,10 @@ nnoremap <silent> <A-Right> :execute 'silent! tabmove ' . tabpagenr()<CR>
 set t_Co=256
 colorscheme desert 
 
+" a few macros for php functions and classes
 let @t = "O/**@test/vkk=jjj@f"
 let @f = "Opublic function (){}?(i"
 let @c = "Oclass {}? a"
+
+" open ctags in a new tab
+map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>

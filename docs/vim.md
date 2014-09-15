@@ -18,4 +18,8 @@ First we need to index the source code. Execute the following instruction from y
 ctags -R .
 ```
 
-Once the index is created, vim loads the tag information automatically. Navigate to any class name and press `C-]`.
+Once the index is created, vim loads the tag information automatically. Use the following combinations to move around:
+
+* `C-]`: Go to definition.
+* `C-t`: Go back from definition.
+* `C-\`: Open definition in a new tab.
