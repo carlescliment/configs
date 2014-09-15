@@ -2,7 +2,7 @@
 
 ## Installing ctags
 
-Ctags is a tool that makes easier to navigate through the code.
+Exuberant Ctags is a tool that makes navigating through the code easier by letting you jump to class/function definitions.
 
 ### Installation:
 
