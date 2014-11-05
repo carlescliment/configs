@@ -96,5 +96,7 @@ let @t = "O/**@test/vkk=jjj@f"
 let @f = "Opublic function (){}?(i"
 let @c = "Oclass {}? a"
 
+let @d = ":set tabstop=2:set shiftwidth=2"
+
 " open ctags in a new tab
 map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
