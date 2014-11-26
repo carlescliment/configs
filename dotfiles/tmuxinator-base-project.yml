@@ -7,4 +7,4 @@ windows:
       layout: main-horizontal
       panes:
           - vim +NERDTree +FufCoverageFile
-          - watchr autounit.rb
+          - watchr autospec.rb
