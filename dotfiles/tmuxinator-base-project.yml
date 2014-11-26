@@ -1,0 +1,10 @@
+# ~/.tmuxinator/project-name
+name: project-name
+root: /path/to/your/project
+
+windows:
+  - editor:
+      layout: main-horizontal
+      panes:
+          - vim +NERDTree +FufCoverageFile
+          - watchr autounit.rb
