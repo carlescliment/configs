@@ -68,11 +68,11 @@ Bundle 'FuzzyFinder'
 Bundle 'EasyGrep'
 Bundle "CSApprox"
 Bundle 'scrooloose/nerdtree'
+Bundle 'jistr/vim-nerdtree-tabs'
 " tabs for autocompleting
 Bundle "supertab"
 
 map <C-s-p> :FufCoverageFile<CR>
-map <C-n> :NERDTreeToggle<CR>
 
 " disable cursor keys in normal mode
 map <Left>  :echo "no!"<cr>
@@ -100,6 +100,10 @@ let @f = "Opublic function (){}?(i"
 let @c = "Oclass {}? a"
 
 let @d = ":set tabstop=2:set shiftwidth=2"
+
+" Nerdtree
+map <C-n> :NERDTreeTabsToggle<CR>
+let NERDTreeIgnore = ['\.pyc$']
 
 " open ctags in a new tab
 map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
